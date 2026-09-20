@@ -34,4 +34,16 @@ fun main(){
         "7891JKL" to 0.0)
 
     println(kilometraje["1234ABC"])
+
+    val reservaSemana = intArrayOf(9, 10, 3, 5, 2, 9, 0)
+    println(reservaSemana.sum())
+    var reservaAlta = 0
+    var indiceReserva = 0
+    for (i in reservaSemana.indices) {
+        if (reservaSemana[i] > reservaAlta) {
+            reservaAlta = reservaSemana[i]
+            indiceReserva = i
+        }
+    }
+    print("El día con más reservas es el día: ${indiceReserva} con un total de: ${reservaSemana[indiceReserva]} reservas")
 }
