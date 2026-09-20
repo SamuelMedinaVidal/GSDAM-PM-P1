@@ -33,7 +33,7 @@ fun main(){
         "3456GHI" to 843.2,
         "7891JKL" to 0.0)
 
-    println(kilometraje["1234ABC"])
+    //println(kilometraje["1234ABC"])
 
     val reservaSemana = intArrayOf(9, 10, 3, 5, 2, 9, 0)
     println(reservaSemana.sum())
@@ -45,5 +45,10 @@ fun main(){
             indiceReserva = i
         }
     }
-    print("El día con más reservas es el día: ${indiceReserva} con un total de: ${reservaSemana[indiceReserva]} reservas")
+    //println("El día con más reservas es el día: ${indiceReserva} con un total de: ${reservaSemana[indiceReserva]} reservas")
+
+    // Se itera por cada vehículo de la flota y se muestra en consola el vehículo y el precio total por 3 días de uso
+    for (vehiculo in flota) {
+        println("Vehiculo: $vehiculo -> Precio por 3 días: ${vehiculo.calacularPrecioTotal(3)}")
+    }
 }
