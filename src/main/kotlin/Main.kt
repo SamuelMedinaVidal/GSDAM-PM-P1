@@ -10,7 +10,28 @@ fun main(){
     y he ido haciendo modificaciones(sobreescrituras) de esta función en las clases implementeadas a Vehículo.
     Por lo tanto, para modificar la propiedad 'toString()' de manera que muestre en consola la función 'describir', se
     ha sobreescrito la función 'toString' en la clase Vehículo devolviendo la función 'describir'*/
-    val toyotaCorolla = Vehiculo(matricula = "1234ABC", marca = "Toyota", precioPorDia = 5.0 )
+    val toyotaCorolla = Turismo(matricula = "1234ABC", marca = "Toyota", precioPorDia = 5.0, plazas = 5 )
+    //println(toyotaCorolla.toString())
+    val opelCorsa = Turismo(matricula = "2345DEF", marca = "Opel", precioPorDia = 5.5, plazas = 5 )
+    val citroenC3 = Furgoneta(matricula = "3456GHI", marca = "Citroen", precioPorDia = 4.0, capacidadCargaKg = 500 )
+    val nissanKangoo = Furgoneta(matricula = "7891JKL", marca = "Nissan", precioPorDia = 6.0, capacidadCargaKg = 1000)
 
-    println(toyotaCorolla.toString())
+    // Creamos una lista variable con los vehículos
+    val flota = mutableListOf(toyotaCorolla, citroenC3, nissanKangoo, opelCorsa)
+
+    // Creamos una SetList para las marcas, de tipo String
+    val marcas = mutableSetOf<String>()
+
+    // Se itera sobre la lista 'flota' para ir añadiendo las marcas existentes a la SetList 'marcas'
+    for (i in flota) {
+        marcas.add(i.marca)
+    }
+
+    val kilometraje = mutableMapOf<String, Double>(
+        "1234ABC" to 143000.3,
+        "2345DEF" to 70000.0,
+        "3456GHI" to 843.2,
+        "7891JKL" to 0.0)
+
+    println(kilometraje["1234ABC"])
 }
